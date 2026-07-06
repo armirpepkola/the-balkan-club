@@ -1,0 +1,66 @@
+---
+// src/components/Logistics.astro
+---
+
+<section id="logistics" class="py-24 px-4 bg-obsidian border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Details -->
+      <div class="space-y-8 animate-fade-in-up">
+        <div>
+          <h2 class="text-3xl font-display text-white mb-2 uppercase">
+            Visit Us
+          </h2>
+          <div class="w-16 h-0.5 bg-gold mb-6"></div>
+          <p class="text-gray-400 font-sans text-lg">
+            1 Premium Street<br />Northampton, NN1 1AA<br />United Kingdom
+          </p>
+        </div>
+
+        <div>
+          <h3
+            class="text-xl font-display text-gold mb-4 uppercase tracking-widest"
+          >
+            Opening Hours
+          </h3>
+          <ul class="text-gray-400 font-sans space-y-2">
+            <li class="flex justify-between border-b border-white/5 pb-2">
+              <span>Thursday</span>
+              <span>22:00 - 04:00</span>
+            </li>
+            <li class="flex justify-between border-b border-white/5 pb-2">
+              <span>Friday</span>
+              <span>22:00 - 05:00</span>
+            </li>
+            <li class="flex justify-between border-b border-white/5 pb-2">
+              <span>Saturday</span>
+              <span>22:00 - 05:00</span>
+            </li>
+            <li class="flex justify-between pt-2">
+              <span>Sun - Wed</span>
+              <span>Private Events Only</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Map Visual Placeholder -->
+      <div
+        class="h-75 w-full bg-linear-to-br from-obsidian to-[#1a0000] border border-white/10 rounded-sm flex items-center justify-center relative overflow-hidden group"
+      >
+        <div
+          class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]"
+        >
+        </div>
+        <p class="text-white/30 font-display text-sm tracking-widest uppercase">
+          Map Location Integration
+        </p>
+        <!-- Overlay for Phase 2 interactivity -->
+        <div
+          class="absolute inset-0 border-2 border-gold/20 group-hover:border-gold/50 transition-colors"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
