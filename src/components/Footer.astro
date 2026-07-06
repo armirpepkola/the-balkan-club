@@ -1,0 +1,104 @@
+---
+// src/components/Footer.astro
+---
+
+<footer
+  class="relative bg-obsidian border-t border-white/5 pt-24 pb-12 px-4 z-20"
+>
+  <div class="max-w-4xl mx-auto text-center animate-fade-in-up">
+    <!-- Philosophy -->
+    <h2 class="text-3xl font-display text-gold mb-6 uppercase tracking-widest">
+      Our Philosophy
+    </h2>
+    <p
+      class="text-gray-300 font-sans text-lg mb-12 leading-relaxed max-w-2xl mx-auto"
+    >
+      We believe nightlife is an art form. The Balkan Club exists for those who
+      demand more than just a night out—it is a sanctuary for the bold, the
+      successful, and the unapologetic.
+    </p>
+
+    <!-- Dress Code -->
+    <div
+      class="inline-block border border-white/10 bg-white/5 px-8 py-6 rounded-sm mb-16 backdrop-blur-sm"
+    >
+      <h3 class="text-sm text-gray-400 uppercase tracking-[0.3em] mb-3">
+        Dress Code
+      </h3>
+      <p class="text-xl font-display text-white italic">
+        "Dress Elegant. Arrive Confident. Leave Unforgettable."
+      </p>
+    </div>
+
+    <!-- Phase 2 CTA Trigger -->
+    <div class="mb-20">
+      <button
+        id="vip-modal-trigger"
+        class="bg-crimson hover:bg-red-900 text-white font-sans uppercase tracking-widest text-sm px-12 py-5 rounded-sm transition-all duration-300 border border-crimson hover:border-gold shadow-[0_0_15px_rgba(139,0,0,0.4)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+      >
+        Book a VIP Table
+      </button>
+    </div>
+
+    <!-- Footer Links / Copyright -->
+    <div
+      class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-sans uppercase tracking-wider"
+    >
+      <p>
+        &copy; {new Date().getFullYear()} The Balkan Club. All Rights Reserved.
+      </p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-gold transition-colors">Instagram</a>
+        <a href="#" class="hover:text-gold transition-colors">Contact</a>
+        <a href="#" class="hover:text-gold transition-colors">Terms</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 2 Placeholder Modal (Native HTML Dialog) -->
+  <dialog
+    id="vip-modal"
+    class="bg-obsidian border border-gold/50 p-8 rounded-sm backdrop:bg-black/80 backdrop:backdrop-blur-sm text-white w-full max-w-md shadow-2xl open:animate-fade-in-up"
+  >
+    <div class="text-center">
+      <h3 class="text-2xl font-display text-gold mb-4 uppercase">
+        VIP Reservations
+      </h3>
+      <p class="text-gray-400 font-sans text-sm mb-8 leading-relaxed">
+        Live online booking is currently locked pending Phase 2 rollout. Please
+        contact our concierge directly to secure your table.
+      </p>
+      <button
+        id="close-modal"
+        class="border border-white/20 hover:border-white/60 text-white px-8 py-3 uppercase tracking-widest text-xs transition-colors cursor-pointer"
+      >
+        Close
+      </button>
+    </div>
+  </dialog>
+</footer>
+
+<script>
+  // Lightweight Vanilla JS - Zero React overhead for simple UI toggles
+  const modal = document.getElementById(
+    "vip-modal",
+  ) as HTMLDialogElement | null;
+  const trigger = document.getElementById("vip-modal-trigger");
+  const closeBtn = document.getElementById("close-modal");
+
+  trigger?.addEventListener("click", () => modal?.showModal());
+  closeBtn?.addEventListener("click", () => modal?.close());
+
+  // Close modal when clicking outside the dialog box
+  modal?.addEventListener("click", (e) => {
+    const dialogDimensions = modal.getBoundingClientRect();
+    if (
+      e.clientX < dialogDimensions.left ||
+      e.clientX > dialogDimensions.right ||
+      e.clientY < dialogDimensions.top ||
+      e.clientY > dialogDimensions.bottom
+    ) {
+      modal.close();
+    }
+  });
+</script>
