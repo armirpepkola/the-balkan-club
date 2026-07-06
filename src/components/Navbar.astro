@@ -1,0 +1,53 @@
+---
+// src/components/Navbar.astro
+---
+
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 flex justify-between items-center text-white"
+>
+  <div
+    class="text-xl font-display font-bold tracking-widest text-gold uppercase"
+  >
+    TBC
+  </div>
+
+  <div
+    class="hidden md:flex gap-8 font-sans text-xs uppercase tracking-widest text-white/70"
+  >
+    <a href="#hero" class="hover:text-gold transition-colors">Home</a>
+    <a href="#experience" class="hover:text-gold transition-colors"
+      >Experience</a
+    >
+    <a href="#spaces" class="hover:text-gold transition-colors">Spaces</a>
+    <a href="#footer" class="hover:text-gold transition-colors">Contact</a>
+  </div>
+
+  <a
+    href="#footer"
+    class="bg-white/10 hover:bg-gold hover:text-obsidian px-4 py-2 border border-white/20 text-xs uppercase tracking-widest transition-all"
+  >
+    VIP
+  </a>
+</nav>
+
+<script>
+  const nav = document.getElementById("navbar");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      nav?.classList.add(
+        "bg-obsidian/80",
+        "backdrop-blur-md",
+        "border-b",
+        "border-white/10",
+      );
+    } else {
+      nav?.classList.remove(
+        "bg-obsidian/80",
+        "backdrop-blur-md",
+        "border-b",
+        "border-white/10",
+      );
+    }
+  });
+</script>

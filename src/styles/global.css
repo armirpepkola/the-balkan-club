@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   /* The Balkan Club Luxury Design Tokens */
   --color-obsidian: #0B0B0B;

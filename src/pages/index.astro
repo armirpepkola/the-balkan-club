@@ -1,13 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
 import Experience from "../components/Experience.astro";
 import SignatureSpaces from "../components/SignatureSpaces";
 import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="The Balkan Club | Northampton's Premium Nightlife">
+  <Navbar />
   <!-- SECTION 1: HERO / WELCOME -->
   <section
+    id="hero"
     class="relative h-screen flex items-center justify-center overflow-hidden"
   >
     <div
@@ -44,11 +47,17 @@ import Footer from "../components/Footer.astro";
   </section>
 
   <!-- SECTION 2: EXPERIENCE -->
-  <Experience />
+  <section id="experience">
+    <Experience />
+  </section>
 
   <!-- SECTION 3: SIGNATURE SPACES (Interactive React Island) -->
-  <SignatureSpaces client:load />
+  <section id="spaces">
+    <SignatureSpaces client:load />
+  </section>
 
   <!-- SECTION 4: FOOTER -->
-  <Footer />
+  <div id="footer">
+    <Footer />
+  </div>
 </Layout>
