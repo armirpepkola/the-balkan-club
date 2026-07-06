@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="The Balkan Club | Northampton's Premium Nightlife">
+  <!-- 
+    SECTION 1: HERO / WELCOME
+    ASSET PLACEHOLDER: In Phase 2, swap this bg-gradient div for an optimized <Image /> 
+    component or a background-image applying your .webp venue photography. 
+  -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Temporary Luxury Gradient Fallback -->
+    <div class="absolute inset-0 bg-gradient-to-br from-obsidian via-[#2a0000] to-obsidian z-0"></div>
+    
+    <!-- Dark Glass/Vignette Overlay to make text pop -->
+    <div class="absolute inset-0 bg-black/40 z-0"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in-up">
+      <h1 class="text-5xl md:text-7xl font-display text-gold mb-6 tracking-wide uppercase drop-shadow-lg">
+        The Balkan Club
+      </h1>
+      <p class="text-xl md:text-2xl text-white font-light mb-8 italic">
+        Where luxury meets nightlife. Where every night becomes a story.
+      </p>
+      <p class="text-sm md:text-base text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed font-sans">
+        Northampton’s most exclusive destination. Immerse yourself in an atmosphere of unapologetic power, rich velvet aesthetics, and curated international sounds.
+      </p>
+      
+      <!-- Phase 2 Modal Trigger Placeholder -->
+      <button 
+        class="bg-crimson hover:bg-red-900 text-white font-sans uppercase tracking-widest text-sm px-10 py-4 rounded-sm transition-all duration-300 border border-crimson hover:border-gold shadow-[0_0_15px_rgba(139,0,0,0.4)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+      >
+        Book a VIP Table
+      </button>
+    </div>
+  </section>
+
+</Layout>

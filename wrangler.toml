@@ -1,0 +1,7 @@
+
+name = "the-balkan-club"
+compatibility_date = "2026-07-06"
+pages_build_output_dir = "dist"
+
+# We will add D1 database bindings here in Phase 2.
+# For now, this file exists purely to satisfy the local platform proxy.

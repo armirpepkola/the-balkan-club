@@ -18,7 +18,7 @@
     @apply bg-obsidian text-gray-200 font-sans antialiased;
     /* Custom highlight selection for that premium touch */
     selection-background-color: var(--color-gold);
-    selection-color: var(--color-obsidian);
+    selection-color: var(--color-obsidian); 
   }
 
   h1, h2, h3, h4, h5, h6 {
