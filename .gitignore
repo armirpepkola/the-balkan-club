@@ -1,0 +1,18 @@
+# Node & Package Managers
+node_modules/
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Astro Output & Cache
+dist/
+.astro/
+
+# Cloudflare / Wrangler (Phase 2 Prep)
+.wrangler/
+.dev.vars
+
+# OS & Editor
+.DS_Store
+.vscode/
