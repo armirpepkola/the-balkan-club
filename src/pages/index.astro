@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Experience from "../components/Experience.astro";
+import SignatureSpaces from "../components/SignatureSpaces";
 ---
 
 <Layout title="The Balkan Club | Northampton's Premium Nightlife">
@@ -8,15 +9,12 @@ import Experience from "../components/Experience.astro";
   <section
     class="relative h-screen flex items-center justify-center overflow-hidden"
   >
-    <!-- Temporary Luxury Gradient Fallback -->
     <div
-      class="absolute inset-0 bg-gradient-to-br from-obsidian via-[#2a0000] to-obsidian z-0"
+      class="absolute inset-0 bg-linear-to-br from-obsidian via-[#2a0000] to-obsidian z-0"
     >
     </div>
-    <!-- Dark Glass/Vignette Overlay -->
     <div class="absolute inset-0 bg-black/40 z-0"></div>
 
-    <!-- Hero Content -->
     <div
       class="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in-up"
     >
@@ -46,4 +44,7 @@ import Experience from "../components/Experience.astro";
 
   <!-- SECTION 2: EXPERIENCE -->
   <Experience />
+
+  <!-- SECTION 3: SIGNATURE SPACES (Interactive React Island) -->
+  <SignatureSpaces client:load />
 </Layout>

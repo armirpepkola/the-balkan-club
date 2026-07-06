@@ -16,7 +16,11 @@ export default defineConfig({
     build: {
       target: 'esnext'
     },
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    // FORCE Vite to resolve React 19 ESM exports properly
+    optimizeDeps: {
+      include: ['react', 'react/jsx-runtime', 'react-dom/client']
+    }
   },
   
   integrations: [
@@ -24,7 +28,6 @@ export default defineConfig({
   ],
   
   adapter: cloudflare({
-    // Silences the deprecation warning
     entrypointResolution: 'auto',
     platformProxy: {
       enabled: true
