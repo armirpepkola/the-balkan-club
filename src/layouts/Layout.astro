@@ -1,0 +1,66 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "The Balkan Club Northampton. Where luxury meets nightlife. Where every night becomes a story." 
+} = Astro.props;
+
+// Local SEO Schema - Strictly typed for Google Rich Results
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "NightClub",
+  "name": "The Balkan Club",
+  "image": "https://thebalkanclub.co.uk/assets/og-image.webp", // Placeholder for Phase 2
+  "@id": "https://thebalkanclub.co.uk",
+  "url": "https://thebalkanclub.co.uk",
+  "telephone": "+44 1604 000000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1 Premium Street",
+    "addressLocality": "Northampton",
+    "postalCode": "NN1 1AA",
+    "addressCountry": "UK"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 52.2405,
+    "longitude": -0.9027
+  },
+  "priceRange": "$$$"
+};
+---
+
+<!doctype html>
+<html lang="en" class="bg-obsidian">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <!-- Astro v7 Native SPA Routing -->
+    <ClientRouter />
+
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Pre-baked Local SEO JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="min-h-screen flex flex-col overflow-x-hidden">
+    <main class="flex-grow">
+      <slot />
+    </main>
+  </body>
+</html>

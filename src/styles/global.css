@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  /* The Balkan Club Luxury Design Tokens */
+  --color-obsidian: #0B0B0B;
+  --color-crimson: #8B0000;
+  --color-gold: #D4AF37;
+  --color-glass-dark: rgba(11, 11, 11, 0.7);
+
+  /* We'll assume a high-end serif for headings and a clean sans for body */
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+/* Base Body Styles for a Premium Canvas */
+@layer base {
+  body {
+    @apply bg-obsidian text-gray-200 font-sans antialiased;
+    /* Custom highlight selection for that premium touch */
+    selection-background-color: var(--color-gold);
+    selection-color: var(--color-obsidian);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-white tracking-tight;
+  }
+}
+
+/* Native CSS Scroll-Driven Animations */
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp linear both;
+    /* This ties the animation directly to the browser scroll engine */
+    animation-timeline: view();
+    /* Starts fading in when 10% in view, finishes at 30% in view */
+    animation-range: entry 10% cover 30%;
+  }
+
+  .bg-glass {
+    @apply bg-glass-dark backdrop-blur-md border border-white/10;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
