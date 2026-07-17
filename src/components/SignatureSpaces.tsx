@@ -26,9 +26,9 @@ const spaces = [
 export default function SignatureSpaces() {
   const [activeSpace, setActiveSpace] = useState(spaces[0]);
 
-  // DIAGNOSTIC HOOK: This will ONLY run if React successfully hydrates on the client
+  // DIAGNOSTIC HOOK: React successfully hydrates on the client
   useEffect(() => {
-    console.log("🚀 REACT HYDRATION SUCCESSFUL: Signature Spaces is interactive.");
+    console.log("REACT HYDRATION SUCCESSFUL: Signature Spaces is interactive.");
   }, []);
 
   return (
