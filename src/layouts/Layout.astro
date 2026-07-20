@@ -9,48 +9,42 @@ interface Props {
 
 const {
   title,
-  description = "The Balkan Club Northampton. Where luxury meets nightlife. Where every night becomes a story.",
+  description = "Where luxury meets nightlife. Where every night becomes a story.",
 } = Astro.props;
 
-// Local SEO Schema - Strictly typed for Google Rich Results
+// Phase 1: Pre-baked Local SEO Schema for Northampton
 const schema = {
   "@context": "https://schema.org",
   "@type": "NightClub",
   name: "The Balkan Club",
-  image: "https://thebalkanclub.co.uk/assets/og-image.webp", // Placeholder for Phase 2
+  image: "https://thebalkanclub.co.uk/og-image.webp", // Placeholder until deployment
   "@id": "https://thebalkanclub.co.uk",
   url: "https://thebalkanclub.co.uk",
-  telephone: "+44 1604 000000",
+  telephone: "+44 1604 000000", // TODO: Client to provide
   address: {
     "@type": "PostalAddress",
-    streetAddress: "1 Premium Street",
+    streetAddress: "TBD", // TODO: Client to provide
     addressLocality: "Northampton",
-    postalCode: "NN1 1AA",
-    addressCountry: "UK",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 52.2405,
-    longitude: -0.9027,
+    postalCode: "NN1", // TODO: Client to provide full postcode
+    addressCountry: "GB",
   },
   priceRange: "$$$",
+  description: description,
 };
 ---
 
 <!doctype html>
-<html lang="en" class="bg-obsidian">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
 
-    <!-- Astro v7 Native SPA Routing -->
-    <ClientRouter />
+    <title>{title} | The Balkan Club</title>
+    <meta name="description" content={description} />
 
-    <!-- Google Fonts: Inter & Playfair Display -->
+    <!-- Preloading High-End Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -58,12 +52,15 @@ const schema = {
       rel="stylesheet"
     />
 
-    <!-- Pre-baked Local SEO JSON-LD -->
+    <!-- Native Astro 7 View Transitions for SPA feel -->
+    <ClientRouter />
+
+    <!-- Local SEO Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
-  <body class="min-h-screen flex flex-col overflow-x-hidden">
-    <main class="grow">
-      <slot />
-    </main>
+  <body
+    class="bg-obsidian text-gray-200 antialiased selection:bg-crimson selection:text-white min-h-screen flex flex-col"
+  >
+    <slot />
   </body>
 </html>

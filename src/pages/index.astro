@@ -1,75 +1,28 @@
 ---
+// src/pages/index.astro
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
 import Experience from "../components/Experience.astro";
+import Atmosphere from "../components/Atmosphere.astro";
 import SignatureSpaces from "../components/SignatureSpaces";
 import Footer from "../components/Footer.astro";
-import Atmosphere from "../components/Atmosphere.astro";
+import Navbar from "../components/Navbar.astro";
 import Logistics from "../components/Logistics.astro";
 ---
 
-<Layout title="The Balkan Club | Northampton's Premium Nightlife">
+<Layout
+  title="Exclusive Nightlife"
+  description="The Balkan Club in Northampton. Where luxury meets nightlife. Where every night becomes a story."
+>
   <Navbar />
-  <!-- SECTION 1: HERO / WELCOME -->
-  <section
-    id="hero"
-    class="relative h-screen flex items-center justify-center overflow-hidden"
-  >
-    <div
-      class="absolute inset-0 bg-linear-to-br from-obsidian via-[#2a0000] to-obsidian z-0"
-    >
-    </div>
-    <div class="absolute inset-0 bg-black/40 z-0"></div>
-
-    <div
-      class="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in-up"
-    >
-      <h1
-        class="text-5xl md:text-7xl font-display text-gold mb-6 tracking-wide uppercase drop-shadow-lg"
-      >
-        The Balkan Club
-      </h1>
-      <p class="text-xl md:text-2xl text-white font-light mb-8 italic">
-        Where luxury meets nightlife. Where every night becomes a story.
-      </p>
-      <p
-        class="text-sm md:text-base text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed font-sans"
-      >
-        Northampton’s most exclusive destination. Immerse yourself in an
-        atmosphere of unapologetic power, rich velvet aesthetics, and curated
-        international sounds.
-      </p>
-
-      <button
-        class="bg-crimson hover:bg-red-900 text-white font-sans uppercase tracking-widest text-sm px-10 py-4 rounded-sm transition-all duration-300 border border-crimson hover:border-gold shadow-[0_0_15px_rgba(139,0,0,0.4)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
-      >
-        Book a Table
-      </button>
-    </div>
-  </section>
-
-  <!-- SECTION 2: EXPERIENCE -->
-  <section id="experience">
+  <main class="bg-obsidian flex flex-col w-full">
+    <Hero />
     <Experience />
-  </section>
-
-  <!-- SECTION 3: SIGNATURE SPACES (Interactive React Island) -->
-  <section id="spaces">
-    <SignatureSpaces client:load />
-  </section>
-
-  <!-- SECTION 4: ATMOSPHERE -->
-  <section id="atmosphere">
+    <!-- Note: React components will use Astro's client directives to manage JS payloads -->
+    <SignatureSpaces client:visible />
     <Atmosphere />
-  </section>
-
-  <!-- SECTION 5: LOGISTICS -->
-  <section id="logistics">
     <Logistics />
-  </section>
+  </main>
 
-  <!-- FOOTER -->
-  <div id="footer">
-    <Footer />
-  </div>
+  <Footer />
 </Layout>

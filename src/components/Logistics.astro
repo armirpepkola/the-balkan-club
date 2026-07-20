@@ -2,67 +2,143 @@
 // src/components/Logistics.astro
 ---
 
-<section id="logistics" class="py-24 px-4 bg-obsidian border-t border-white/5">
-  <div class="max-w-4xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <!-- Details -->
-      <div class="space-y-8 animate-fade-in-up">
-        <div>
-          <h2 class="text-3xl font-display text-white mb-2 uppercase">
-            Visit Us
-          </h2>
-          <div class="w-16 h-0.5 bg-gold mb-6"></div>
-          <p class="text-gray-400 font-sans text-lg">
-            Far Cotton Working Mens Club<br />
-            Main Road<br />
-            Northampton<br />
-            NN4 8EN
-          </p>
-        </div>
+<section
+  id="logistics"
+  class="py-24 px-4 bg-obsidian relative z-10 border-t border-crimson-dark/20"
+>
+  <!-- Subtle ambient background glow -->
+  <div
+    class="absolute bottom-0 right-0 w-96 h-96 bg-gold-metallic/5 rounded-full blur-[100px] pointer-events-none"
+  >
+  </div>
 
-        <div>
-          <h3
-            class="text-xl font-display text-gold mb-4 uppercase tracking-widest"
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="text-center mb-16 animate-fade-in-up">
+      <h2
+        class="text-4xl md:text-5xl font-serif text-white uppercase tracking-widest mb-6"
+      >
+        The <span class="text-gradient-gold">Details</span>
+      </h2>
+      <p class="text-gray-400 font-sans font-light max-w-2xl mx-auto text-lg">
+        Essential information for your arrival. We enforce a strict standard to
+        protect the atmosphere of the venue.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Location Card -->
+      <div class="glass-panel p-10 text-center flex flex-col items-center">
+        <div class="w-12 h-12 mb-6 text-gold-metallic">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Opening Hours
-          </h3>
-          <ul class="text-gray-400 font-sans space-y-2">
-            <li class="flex justify-between border-b border-white/5 pb-2">
-              <span>Thursday</span>
-              <span>22:00 - 04:00</span>
-            </li>
-            <li class="flex justify-between border-b border-white/5 pb-2">
-              <span>Friday</span>
-              <span>22:00 - 05:00</span>
-            </li>
-            <li class="flex justify-between border-b border-white/5 pb-2">
-              <span>Saturday</span>
-              <span>22:00 - 05:00</span>
-            </li>
-            <li class="flex justify-between pt-2">
-              <span>Sun - Wed</span>
-              <span>Private Events Only</span>
-            </li>
-          </ul>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"
+            ></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.2"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-serif text-white uppercase tracking-wider mb-4">
+          Location
+        </h3>
+        <p
+          class="text-gray-400 font-sans font-light text-sm leading-relaxed mb-4"
+        >
+          Far Cotton The Balkan Club<br />
+          Main Road<br />
+          Northampton<br />
+          NN4 8EN
+        </p>
+        <a
+          href="https://maps.app.goo.gl/JatvjsdF3iYfX4R16"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button
+            class="text-xs uppercase tracking-widest text-gold-metallic hover:text-white transition-colors duration-300 mt-auto border-b border-gold-metallic/30 pb-1"
+          >
+            Get Directions
+          </button>
+        </a>
+      </div>
+
+      <!-- Hours Card -->
+      <div
+        class="glass-panel p-10 text-center flex flex-col items-center border border-gold-metallic/20 shadow-[0_0_30px_rgba(212,175,55,0.05)] transform md:-translate-y-4"
+      >
+        <div class="w-12 h-12 mb-6 text-gold-metallic">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-serif text-white uppercase tracking-wider mb-4">
+          Hours
+        </h3>
+        <div
+          class="text-gray-400 font-sans font-light text-sm leading-relaxed w-full"
+        >
+          <div class="flex justify-between border-b border-white/10 pb-2 mb-2">
+            <span>Friday</span>
+            <span class="text-white">10:00 PM - 5:00 AM</span>
+          </div>
+          <div class="flex justify-between border-b border-white/10 pb-2 mb-2">
+            <span>Saturday</span>
+            <span class="text-white">10:00 PM - 5:00 AM</span>
+          </div>
+          <div class="flex justify-between pt-2">
+            <span>Sun - Thu</span>
+            <span class="text-gray-500 italic">Private Events Only</span>
+          </div>
         </div>
       </div>
 
-      <!-- Map Visual Placeholder -->
-      <div
-        class="h-75 w-full bg-linear-to-br from-obsidian to-[#1a0000] border border-white/10 rounded-sm flex items-center justify-center relative overflow-hidden group"
-      >
-        <div
-          class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]"
-        >
+      <!-- Door Policy Card -->
+      <div class="glass-panel p-10 text-center flex flex-col items-center">
+        <div class="w-12 h-12 mb-6 text-gold-metallic">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            ></path>
+          </svg>
         </div>
-        <p class="text-white/30 font-display text-sm tracking-widest uppercase">
-          Map Location Integration
-        </p>
-        <!-- Overlay for Phase 2 interactivity -->
-        <div
-          class="absolute inset-0 border-2 border-gold/20 group-hover:border-gold/50 transition-colors"
+        <h3 class="text-xl font-serif text-white uppercase tracking-wider mb-4">
+          Door Policy
+        </h3>
+        <ul
+          class="text-gray-400 font-sans font-light text-sm leading-relaxed text-left list-disc list-inside space-y-2"
         >
-        </div>
+          <li>Strictly 21+ for all guests.</li>
+          <li>Valid physical ID required upon entry.</li>
+          <li>Management reserves the right to refuse admission.</li>
+          <li>Dress code strictly enforced at the door.</li>
+        </ul>
       </div>
     </div>
   </div>

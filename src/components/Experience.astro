@@ -1,49 +1,51 @@
 ---
 // src/components/Experience.astro
+
+const features = [
+  {
+    title: "Premium VIP",
+    desc: "Exclusive booth seating with dedicated bottle service and personal hosting for the ultimate elite experience.",
+  },
+  {
+    title: "Signature Cocktails",
+    desc: "Artisanal beverages crafted by our master mixologists, blending premium spirits with exotic ingredients.",
+  },
+  {
+    title: "International DJs",
+    desc: "State-of-the-art acoustic sound systems paired with world-class talent to keep the energy unmatched.",
+  },
+  {
+    title: "Sophisticated Spaces",
+    desc: "Intimately designed enclaves perfect for private conversation, high-end networking, and connection.",
+  },
+];
 ---
 
-<section class="relative py-24 px-4 bg-obsidian border-t border-white/5 z-10">
+<section
+  id="experience"
+  class="relative py-24 px-4 bg-obsidian border-t border-white/5 z-10"
+>
   <div class="max-w-6xl mx-auto">
     <!-- Section Header -->
     <div class="text-center mb-16 animate-fade-in-up">
-      <h2
-        class="text-3xl md:text-5xl font-display text-white mb-4 tracking-wide uppercase"
-      >
-        An Unforgettable Experience
+      <h2 class="text-4xl md:text-5xl text-white uppercase mb-6">
+        An Unforgettable <span class="text-gradient-gold">Experience</span>
       </h2>
-      <div class="w-16 h-0.5 bg-gold mx-auto mb-6"></div>
-      <p class="text-gray-400 font-sans max-w-2xl mx-auto text-lg font-light">
-        Every detail is meticulously curated. From the moment you step through
-        our velvet ropes, you enter a world of unparalleled sophistication.
+      <p class="text-gray-400 max-w-2xl mx-auto font-light text-lg">
+        Step into a world where every detail is meticulously curated to elevate
+        your night.
       </p>
     </div>
 
     <!-- Value Proposition Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {
-        [
-          {
-            title: "Premium VIP",
-            desc: "Exclusive tables, dedicated bottle service, and absolute discretion for our most discerning guests.",
-          },
-          {
-            title: "Signature Cocktails",
-            desc: "Crafted by master mixologists using rare, premium spirits and avant-garde techniques.",
-          },
-          {
-            title: "International DJs",
-            desc: "Curated, high-energy soundscapes from the world's most sought-after electronic artists.",
-          },
-          {
-            title: "Sophisticated Lounges",
-            desc: "Intimate enclaves adorned with dark velvet, leopard motifs, and crystal accents.",
-          },
-        ].map((item) => (
-          <div class="bg-glass p-8 rounded-sm hover:-translate-y-2 transition-transform duration-300 border border-white/5 hover:border-gold/40 group animate-fade-in-up">
-            <h3 class="text-xl font-display text-gold mb-3 group-hover:text-white transition-colors">
+        features.map((item) => (
+          <div class="glass-panel p-8 text-center group hover:-translate-y-2 transition-all duration-300 border-white/10 hover:border-gold-metallic animate-fade-in-up">
+            <h3 class="text-xl text-gold-metallic mb-4 uppercase tracking-wider group-hover:text-white transition-colors duration-300">
               {item.title}
             </h3>
-            <p class="text-gray-400 text-sm leading-relaxed font-sans">
+            <p class="text-gray-400 text-sm font-light leading-relaxed">
               {item.desc}
             </p>
           </div>

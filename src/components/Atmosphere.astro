@@ -1,70 +1,93 @@
 ---
 // src/components/Atmosphere.astro
+import { Image } from "astro:assets";
+import chandelierImg from "../assets/images/DSC06124.jpg";
+import leopardTexture from "../assets/images/DSC06164.jpg";
 ---
 
-<section id="atmosphere" class="py-24 px-4 bg-obsidian">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-16 animate-fade-in-up">
+<section
+  id="atmosphere"
+  class="py-32 px-4 bg-obsidian relative overflow-hidden"
+>
+  <!-- Ambient background glow to break up the solid black -->
+  <div
+    class="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-crimson-dark/20 rounded-full blur-[120px] pointer-events-none"
+  >
+  </div>
+
+  <div
+    class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10"
+  >
+    <!-- Text Storyboard -->
+    <div class="lg:w-1/2 z-20 animate-fade-in-up">
       <h2
-        class="text-3xl md:text-5xl font-display text-white mb-4 uppercase tracking-wide"
+        class="text-4xl md:text-6xl font-serif text-white uppercase tracking-widest mb-8 leading-tight"
       >
-        The Atmosphere
+        The <span class="text-gradient-gold">Atmosphere</span>
       </h2>
-      <div class="w-16 h-0.5 bg-gold mx-auto"></div>
+
+      <div
+        class="space-y-6 text-gray-400 font-sans font-light text-lg leading-relaxed border-l border-gold-metallic/30 pl-6"
+      >
+        <p>
+          The Balkan Club is meticulously designed to stimulate the senses. Rich
+          crimson velvet collides with deep onyx surfaces, illuminated by the
+          warm, fractured glow of bespoke crystal chandeliers.
+        </p>
+        <p>
+          Subtle textures of high-fashion leopard print line the exclusive
+          enclaves, providing an untamed, vibrant undercurrent to the
+          sophisticated architecture. Here, darkness is not an absence of light,
+          but a canvas for gold and glass.
+        </p>
+      </div>
+
+      <div class="mt-10">
+        <p class="text-gold-light font-serif italic tracking-wide">
+          "Dress Elegant. Arrive Confident. Leave Unforgettable."
+        </p>
+      </div>
     </div>
 
-    <!-- Asymmetrical Grid for High-End Aesthetic -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-62.5">
-      <!-- Image 1 -->
+    <!-- Asymmetric Editorial Collage (Phase 1 Fallbacks) -->
+    <div
+      class="lg:w-1/2 relative w-full h-125 md:h-150 flex justify-center items-center mt-10 lg:mt-0"
+    >
+      <!-- Main Frame: Chandelier / Main Room -->
       <div
-        class="md:col-span-2 md:row-span-2 relative group overflow-hidden border border-white/5"
+        class="absolute w-[80%] h-[85%] right-0 top-0 bg-linear-to-br from-crimson-base/40 to-black border border-white/10 shadow-2xl overflow-hidden glass-panel group"
       >
+        <!-- Phase 2: Chandelier Image -->
+
+        <Image
+          src={chandelierImg}
+          alt="Bespoke Crystal Chandeliers"
+          class="w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700"
+        />
+
         <div
-          class="absolute inset-0 bg-linear-to-tr from-[#2a0000] to-black opacity-80 transition-transform group-hover:scale-105 duration-700"
+          class="absolute inset-0 flex items-center justify-center text-crimson-base/20 font-serif text-4xl uppercase tracking-widest"
         >
-        </div>
-        <div
-          class="absolute inset-0 flex items-center justify-center text-gold/20 font-display text-2xl"
-        >
-          Visual 01
+          Main Hall
         </div>
       </div>
-      <!-- Image 2 -->
+
+      <!-- Overlapping Secondary Frame: Leopard Print / Details -->
       <div
-        class="md:col-span-2 relative group overflow-hidden border border-white/5"
+        class="absolute w-[55%] h-[55%] left-0 bottom-0 bg-linear-to-tl from-gold-metallic/20 to-[#1a1a1a] border border-gold-metallic/40 shadow-2xl backdrop-blur-xl overflow-hidden group"
       >
+        <!-- Phase 2: Texture Image -->
+
+        <Image
+          src={leopardTexture}
+          alt="Leopard Print Motif"
+          class="w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
+        />
+
         <div
-          class="absolute inset-0 bg-linear-to-bl from-obsidian to-[#2a0000] opacity-80 transition-transform group-hover:scale-105 duration-700"
+          class="absolute inset-0 flex items-center justify-center text-gold-metallic/40 font-serif italic text-xl"
         >
-        </div>
-        <div
-          class="absolute inset-0 flex items-center justify-center text-gold/20 font-display text-2xl"
-        >
-          Visual 02
-        </div>
-      </div>
-      <!-- Image 3 -->
-      <div class="relative group overflow-hidden border border-white/5">
-        <div
-          class="absolute inset-0 bg-[#1a0000] opacity-80 transition-transform group-hover:scale-105 duration-700"
-        >
-        </div>
-        <div
-          class="absolute inset-0 flex items-center justify-center text-gold/20 font-display text-2xl"
-        >
-          Visual 03
-        </div>
-      </div>
-      <!-- Image 4 -->
-      <div class="relative group overflow-hidden border border-white/5">
-        <div
-          class="absolute inset-0 bg-black opacity-80 transition-transform group-hover:scale-105 duration-700"
-        >
-        </div>
-        <div
-          class="absolute inset-0 flex items-center justify-center text-gold/20 font-display text-2xl"
-        >
-          Visual 04
+          Untamed
         </div>
       </div>
     </div>
