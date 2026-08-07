@@ -19,13 +19,13 @@ const spaces: Space[] = [
   },
   {
     id: 'vip-lounge',
-    name: 'VIP Lounge',
+    name: 'VIP Room',
     description: 'Exclusive and untamed. Featuring our signature leopard motif, dedicated elite hosts, and total privacy for high-profile guests.',
     features: ['Dedicated Host', 'Bottle Service', 'Private Security'],
   },
   {
     id: 'sunset-lounge',
-    name: 'The Sunset Lounge',
+    name: 'Boiler Room',
     description: 'A sophisticated transition space. Perfect for early evening networking and intimate conversation before the night escalates.',
     features: ['Ambient Lighting', 'Lounge Seating', 'Acoustic Sets'],
   },
