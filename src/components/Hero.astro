@@ -6,14 +6,16 @@ import heroBg from "../assets/images/DSC06334.jpg";
 <section
   class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-obsidian"
 >
-  <!-- Background Layer -->
-  <div class="absolute inset-0 z-0 scale-105 animate-slow-zoom">
+  <!-- Background Layer with Explicit Container Bounds -->
+  <div class="absolute inset-0 z-0 scale-105 animate-slow-zoom w-full h-full">
     <Image
       src={heroBg}
       alt="The Balkan Club Main Floor"
       class="w-full h-full object-cover"
       loading="eager"
       fetchpriority="high"
+      widths={[640, 1024, 1536, 2048]}
+      sizes="100vw"
     />
     <div
       class="absolute inset-0 bg-linear-to-b from-black/60 via-black/20 to-obsidian"
@@ -23,7 +25,6 @@ import heroBg from "../assets/images/DSC06334.jpg";
 
   <!-- Content Layer -->
   <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-    <!-- Headline -->
     <div class="overflow-hidden mb-6">
       <h1
         class="text-7xl md:text-9xl font-serif text-white uppercase tracking-tighter leading-[0.85] animate-reveal"
@@ -32,26 +33,12 @@ import heroBg from "../assets/images/DSC06334.jpg";
       </h1>
     </div>
 
-    <!-- Subheadline -->
     <div class="overflow-hidden mb-12">
       <p
         class="text-lg md:text-xl text-gray-300 font-light italic tracking-widest animate-reveal-delay"
       >
-        Where luxury meets the night.
+        no ordinary weekend.
       </p>
     </div>
-
-    <!-- Booking Trigger -->
-    <!-- <div class="flex justify-center animate-fade-in-delayed">
-      <button
-        class="book-vip-trigger group relative px-12 py-5 bg-white/5 backdrop-blur-md border border-white/20 text-white uppercase tracking-[0.3em] text-xs font-bold transition-all duration-700 hover:border-gold-metallic hover:bg-gold-metallic hover:text-black overflow-hidden"
-      >
-        <span class="relative z-10">Reserve Your Table</span>
-        <div
-          class="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-sweep"
-        >
-        </div>
-      </button>
-    </div> -->
   </div>
 </section>

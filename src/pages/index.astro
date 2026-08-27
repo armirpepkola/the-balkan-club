@@ -8,6 +8,12 @@ import SignatureSpaces from "../components/SignatureSpaces";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import Logistics from "../components/Logistics.astro";
+
+// Import your existing images to pass down to the React island
+import grandBarImg from "../assets/images/F_IMG_1039.jpeg";
+import vipLoungeImg from "../assets/images/DSC06114_C.jpg";
+import boilerRoomImg from "../assets/images/DSC06111.jpg";
+import mainClubImg from "../assets/images/F_IMG_1085.jpg";
 ---
 
 <Layout
@@ -17,11 +23,17 @@ import Logistics from "../components/Logistics.astro";
   <Navbar />
   <main class="bg-obsidian flex flex-col w-full">
     <Hero />
-    <Experience />
-    <!-- Note: React components will use Astro's client directives to manage JS payloads -->
-    <SignatureSpaces client:visible />
-    <Atmosphere />
     <Logistics />
+    <Atmosphere />
+    <!-- Note: React components will use Astro's client directives to manage JS payloads -->
+    <SignatureSpaces
+      client:visible
+      grandBarImage={grandBarImg.src}
+      vipLoungeImage={vipLoungeImg.src}
+      boilerRoomImage={boilerRoomImg.src}
+      mainClubImage={mainClubImg.src}
+    />
+    <Experience />
   </main>
 
   <Footer />

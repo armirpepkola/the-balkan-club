@@ -1,93 +1,145 @@
 ---
 // src/components/Atmosphere.astro
 import { Image } from "astro:assets";
-import chandelierImg from "../assets/images/DSC06124.jpg";
+import mainFloorImg from "../assets/images/F_IMG_1038.jpeg";
+import chandelierImg from "../assets/images/F_IMG_1475.jpeg";
 import leopardTexture from "../assets/images/DSC06164.jpg";
+import fourthImg from "../assets/images/F_DSC06567.jpg";
 ---
 
 <section
   id="atmosphere"
-  class="py-32 px-4 bg-obsidian relative overflow-hidden"
+  class="py-32 px-4 bg-obsidian relative overflow-hidden border-t border-white/5"
 >
-  <!-- Ambient background glow to break up the solid black -->
+  <!-- Ambient background glow -->
   <div
-    class="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-crimson-dark/20 rounded-full blur-[120px] pointer-events-none"
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-crimson-dark/10 rounded-full blur-[150px] pointer-events-none"
   >
   </div>
 
-  <div
-    class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10"
-  >
-    <!-- Text Storyboard -->
-    <div class="lg:w-1/2 z-20 animate-fade-in-up">
-      <h2
-        class="text-4xl md:text-6xl font-serif text-white uppercase tracking-widest mb-8 leading-tight"
-      >
-        The <span class="text-gradient-gold">Atmosphere</span>
-      </h2>
-
-      <div
-        class="space-y-6 text-gray-400 font-sans font-light text-lg leading-relaxed border-l border-gold-metallic/30 pl-6"
-      >
-        <p>
-          The Balkan Club is meticulously designed to stimulate the senses. Rich
-          crimson velvet collides with deep onyx surfaces, illuminated by the
-          warm, fractured glow of bespoke crystal chandeliers.
-        </p>
-        <p>
-          Subtle textures of high-fashion leopard print line the exclusive
-          enclaves, providing an untamed, vibrant undercurrent to the
-          sophisticated architecture. Here, darkness is not an absence of light,
-          but a canvas for gold and glass.
-        </p>
-      </div>
-
-      <div class="mt-10">
-        <p class="text-gold-light font-serif italic tracking-wide">
-          "Dress Elegant. Arrive Confident. Leave Unforgettable."
-        </p>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <!-- Minimalist Header -->
+    <div
+      class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
+    >
+      <div>
+        <span
+          class="text-xs uppercase tracking-[0.3em] text-gold-metallic block mb-3"
+          >Visual Narrative</span
+        >
+        <h2
+          class="text-4xl md:text-6xl font-serif text-white uppercase tracking-wider"
+        >
+          The <span class="text-gradient-gold">Atmosphere</span>
+        </h2>
       </div>
     </div>
 
-    <!-- Asymmetric Editorial Collage (Phase 1 Fallbacks) -->
+    <!-- 4-Image Asymmetric Bento Grid -->
     <div
-      class="lg:w-1/2 relative w-full h-125 md:h-150 flex justify-center items-center mt-10 lg:mt-0"
+      class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-75 md:auto-rows-85"
     >
-      <!-- Main Frame: Chandelier / Main Room -->
+      <!-- Card 1: Wide Feature (Landscape Recommended) -->
       <div
-        class="absolute w-[80%] h-[85%] right-0 top-0 bg-linear-to-br from-crimson-base/40 to-black border border-white/10 shadow-2xl overflow-hidden glass-panel group"
+        class="md:col-span-2 relative group rounded-sm overflow-hidden border border-gold-metallic/20 shadow-2xl bg-black"
       >
-        <!-- Phase 2: Chandelier Image -->
-
         <Image
-          src={chandelierImg}
-          alt="Bespoke Crystal Chandeliers"
-          class="w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700"
+          src={mainFloorImg}
+          alt="The Balkan Club Main Floor"
+          loading="lazy"
+          widths={[600, 1000, 1400]}
+          sizes="(max-width: 768px) 100vw, 66vw"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         />
-
+        <!-- Dedicated Text Overlay Gradient -->
         <div
-          class="absolute inset-0 flex items-center justify-center text-crimson-base/20 font-serif text-4xl uppercase tracking-widest"
+          class="absolute inset-x-0 bottom-0 pt-20 pb-8 px-8 bg-linear-to-t from-black/95 via-black/60 to-transparent z-20"
         >
-          Main Hall
+          <span
+            class="text-[10px] font-sans uppercase tracking-[0.3em] text-gold-metallic block mb-2"
+            >01 / Energy</span
+          >
+          <h3 class="text-2xl md:text-3xl font-serif text-white tracking-wide">
+            Main Floor Experience
+          </h3>
         </div>
       </div>
 
-      <!-- Overlapping Secondary Frame: Leopard Print / Details -->
+      <!-- Card 2: Single Column Vertical (Portrait/Square Recommended) -->
       <div
-        class="absolute w-[55%] h-[55%] left-0 bottom-0 bg-linear-to-tl from-gold-metallic/20 to-[#1a1a1a] border border-gold-metallic/40 shadow-2xl backdrop-blur-xl overflow-hidden group"
+        class="relative group rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-black"
       >
-        <!-- Phase 2: Texture Image -->
+        <Image
+          src={chandelierImg}
+          alt="Bespoke Crystal Chandeliers"
+          loading="lazy"
+          widths={[400, 800]}
+          sizes="(max-width: 768px) 100vw, 33vw"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        />
+        <!-- Dedicated Text Overlay Gradient -->
+        <div
+          class="absolute inset-x-0 bottom-0 pt-20 pb-8 px-8 bg-linear-to-t from-black/95 via-black/60 to-transparent z-20"
+        >
+          <span
+            class="text-[10px] font-sans uppercase tracking-[0.3em] text-gold-metallic block mb-2"
+            >02 / Exclusivity</span
+          >
+          <h3 class="text-2xl font-serif text-white tracking-wide">
+            The VIP Enclaves
+          </h3>
+        </div>
+      </div>
 
+      <!-- Card 3: Single Column Vertical (Portrait/Square Recommended) -->
+      <div
+        class="relative group rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-black"
+      >
         <Image
           src={leopardTexture}
-          alt="Leopard Print Motif"
-          class="w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
+          alt="Exclusive Interior Texture"
+          loading="lazy"
+          widths={[400, 800]}
+          sizes="(max-width: 768px) 100vw, 33vw"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         />
-
+        <!-- Dedicated Text Overlay Gradient -->
         <div
-          class="absolute inset-0 flex items-center justify-center text-gold-metallic/40 font-serif italic text-xl"
+          class="absolute inset-x-0 bottom-0 pt-20 pb-8 px-8 bg-linear-to-t from-black/95 via-black/60 to-transparent z-20"
         >
-          Untamed
+          <span
+            class="text-[10px] font-sans uppercase tracking-[0.3em] text-gold-metallic block mb-2"
+            >03 / Artistry</span
+          >
+          <h3 class="text-2xl font-serif text-white tracking-wide">
+            Crafting Essence
+          </h3>
+        </div>
+      </div>
+
+      <!-- Card 4: Wide Feature (Landscape Recommended) -->
+      <div
+        class="md:col-span-2 relative group rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-black"
+      >
+        <Image
+          src={fourthImg}
+          alt="VIP Enclave Atmosphere"
+          loading="lazy"
+          widths={[600, 1000, 1400]}
+          sizes="(max-width: 768px) 100vw, 66vw"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        />
+        <!-- Dedicated Text Overlay Gradient -->
+        <div
+          class="absolute inset-x-0 bottom-0 pt-20 pb-8 px-8 bg-linear-to-t from-black/95 via-black/60 to-transparent z-20"
+        >
+          <span
+            class="text-[10px] font-sans uppercase tracking-[0.3em] text-gold-metallic block mb-2"
+            >04 / MUSIC</span
+          >
+          <h3 class="text-2xl md:text-3xl font-serif text-white tracking-wide">
+            The DJ Deck
+          </h3>
         </div>
       </div>
     </div>

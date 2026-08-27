@@ -1,5 +1,6 @@
 name = "the-balkan-club"
 compatibility_date = "2026-07-06"
+compatibility_flags = ["nodejs_compat"]
 
 # Define the assets directory using the modern Workers format
 [assets]
